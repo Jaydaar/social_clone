@@ -1,0 +1,1 @@
+This is a social clone. The project was done to learn how to use class based views with django.
