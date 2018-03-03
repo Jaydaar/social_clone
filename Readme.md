@@ -20,7 +20,8 @@ This project is being done to learn how to use class based views (CBVs) in djang
 ```
     pip install -r requirements.txt
 ```
-   You should be in the directory where requirements.txt is before you use the above command.
+You should be in the directory where requirements.txt is before you use the above command.
+
 5. Change into the mysocial directory and run the server
 ```
     cd mysocial
