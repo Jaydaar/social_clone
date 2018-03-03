@@ -9,18 +9,22 @@ This project is being done to learn how to use class based views (CBVs) in djang
 1. Create a virtual environment using virtualenv and activate it
 2. Create a folder in the virtualenv and change to that directory using the terminal
 ```
-mkdir src
-cd src
+    mkdir src
+    cd src
 ```
 3. Clone the git repo using the following command
 ```
-git clone https://github.com/Jaydaar/social_clone.git
+    git clone https://github.com/Jaydaar/social_clone.git
 ```
 4. Install the requirements from the 'requirements.txt' file. (This file will be kept as up to date as possible)
+```
+    pip install -r requirements.txt
+```
+   You should be in the directory where requirements.txt is before you use the above command.
 5. Change into the mysocial directory and run the server
 ```
-cd mysocial
-python manage.py runserver
+    cd mysocial
+    python manage.py runserver
 ```
 
 You should now have the project running. Let me know if you have any problems.
