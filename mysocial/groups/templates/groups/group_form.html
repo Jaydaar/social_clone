@@ -1,0 +1,13 @@
+{% extends 'groups/group_base.html' %}
+<!-- This is where the load for the css is i need to account for this. -->
+<!-- {% load bootstrap3 %} -->
+
+{% block group_content %}
+<h4>Create a new group!</h4>
+
+<form action="{% url 'groups:create' %}" method="POST" id="groupForm">
+{% csrf_token %}
+{% form.as_p %}
+<input type="submit" class="btn" value="Create">
+</form>
+{% endblock %}
