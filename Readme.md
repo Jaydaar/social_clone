@@ -6,7 +6,7 @@ This project is being done to learn how to use class based views (CBVs) in djang
 
 ## Install Instructions
 
-1. Create a virtual environment using virtualenv and activate it
+1. Create a virtual environment using virtualenv and activate it. (I am assuming you are familiar with [virtualenv](https://virtualenv.pypa.io/en/stable/) and you also have [python](https://www.python.org/) installed 
 2. Create a folder in the virtualenv and change to that directory using the terminal
 ```
     mkdir src
