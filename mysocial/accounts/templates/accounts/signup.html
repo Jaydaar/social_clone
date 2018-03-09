@@ -1,16 +1,10 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
-
-{% block content %}
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
 <div class="container">
     <h1>Sign Up</h1>
     <form method="post">
-        {% csrf_token %}
-        {% form %}
+        {% csrf_token %} {{form.as_p}}
         <input type="submit" class="waves-effect waves-light btn" value="Sign Up">
     </form>
 </div>
-    
-{% endblock content %}
 
-    
+{% endblock content %}
