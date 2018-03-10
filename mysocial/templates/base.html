@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-{% load static %} 
-{% load staticfiles %}
+<!DOCTYPE html> {% load static %} {% load staticfiles %}
 <html lang="en">
 
 <head>
@@ -12,40 +10,40 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="{% static 'css/master.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/master.css' %}" />
 </head>
 
 <body>
     <!-- navigation bar -->
     <nav role="navigation">
         <div class="nav-wrapper container">
-            <a href="#!" class="brand-logo">My Social Site</a>
+            <a href="{% url 'home' %}" class="brand-logo">My Social Site</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 {% if user.is_authenticated %}
-                    <li><a href="#">Post</a></li>
-                    <li><a href="#">Groups</a></li>
-                    <li><a href="#">Create Group</a></li>
-                    <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                <li><a href="{% url 'posts:create' %}">Post</a></li>
+                <li><a href="{% url 'groups:all' %}">Groups</a></li>
+                <li><a href="{% url 'groups:create' %}">Create Group</a></li>
+                <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
                 {% else %}
-                    <li><a href="#">Groups</a></li>
-                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                    <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'groups:all' %}">Groups</a></li>
+                <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
                 {% endif %}
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 {% if user.is_authenticated %}
-                    <li><a href="#">Post</a></li>
-                    <li><a href="#">Groups</a></li>
-                    <li><a href="#">Create Group</a></li>
-                    <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                <li><a href="{% url 'posts:create' %}">Post</a></li>
+                <li><a href="{% url 'groups:all' %}">Groups</a></li>
+                <li><a href="{% url 'groups:create' %}">Create Group</a></li>
+                <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
                 {% else %}
-                    <li><a href="#">Groups</a></li>
-                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                    <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'groups:all' %}">Groups</a></li>
+                <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
                 {% endif %}
             </ul>
-            
+
         </div>
     </nav>
     <div class="container">
@@ -57,7 +55,8 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="{% static 'js/master.js' %}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     {% endblock %}
 </body>
+
 </html>
