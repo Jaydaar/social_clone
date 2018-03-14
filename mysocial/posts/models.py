@@ -32,6 +32,3 @@ class Post(models.Model):
         ordering = ['-created_at']
         unique_together = ['user', 'message']
         
-
-
-# Create your models here.

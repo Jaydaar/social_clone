@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib import messages
+from django.db import IntegrityError
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 from django.urls import reverse
@@ -13,7 +14,7 @@ class CreateGroup(LoginRequiredMixin, generic.CreateView):
     model = Group
 
 class SingleGroup(generic.DetailView):
-    models = Group 
+    model = Group 
 
 class ListGroups(generic.ListView):
     model = Group
