@@ -13,10 +13,6 @@ from . import forms
 
 from django.contrib.auth import get_user_model
 
-import warnings
-
-from django.core.exceptions import ImproperlyConfigured
-
 User = get_user_model()
 
 class PostList(SelectRelatedMixin, generic.ListView):
@@ -49,32 +45,9 @@ class PostDetail(SelectRelatedMixin, generic.DetailView):
         queryset = super().get_queryset()
         return queryset.filter(user__username__iexact=self.kwargs.get('username'))
 
-class CreatePost(LoginRequiredMixin, generic.CreateView):
+class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     fields = ('message', 'group')
     model = models.Post
-
-    def get_queryset(self):
-        if self.select_related is None:
-            # If no fields were provided, raise a configuration error
-            raise ImproperlyConfigured(
-                '{0} is missing the select_related property. This must be '
-                'a tuple or list.'.format(self.__class__.__name__))
-
-        if not isinstance(self.select_related, (tuple, list)):
-            # If the select_related argument is *not* a tuple or list,
-            # raise a configuration error.
-            raise ImproperlyConfigured(
-                "{0}'s select_related property must be a tuple or "
-                "list.".format(self.__class__.__name__))
-
-        # Get the current queryset of the view
-        queryset = super(CreatePost, self).get_queryset()
-
-        if not self.select_related:
-            warnings.warn('The select_related attribute is empty')
-            return queryset
-
-        return queryset.select_related(*self.select_related)
 
     def form_valid(self, form):
         self.object = form.save(commit=False)

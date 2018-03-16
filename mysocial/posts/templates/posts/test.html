@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Social Site</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--<link type="text/css" rel="stylesheet" href="/static/css/master.css" /> -->
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav role="navigation">
+        <div class="nav-wrapper container">
+            <a href="/" class="brand-logo">My Social Site</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                <li><a href="/posts/new/">Post</a></li>
+                <li><a href="/groups/">Groups</a></li>
+                <li><a href="/groups/new/">Create Group</a></li>
+                <li><a href="/accounts/logout/">Logout</a></li>
+
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+
+                <li><a href="/posts/new/">Post</a></li>
+                <li><a href="/groups/">Groups</a></li>
+                <li><a href="/groups/new/">Create Group</a></li>
+                <li><a href="/accounts/logout/">Logout</a></li>
+
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="posts-page">
+            <div class="container">
+                <div class="row">
+
+                    <h4>Create a new Post</h4>
+                    <form id='postForm' action="/posts/new/" method="POST"><input type='hidden' name='csrfmiddlewaretoken' value='d11qjiKBImUjw9CUXbWGa1FndMLVj8AaYjClNqWf6vx9jCWYuKQ8B6kmrTAvmxhT' />
+                        <p>
+                            <label for="id_message">Message:</label>
+                            <textarea name="message" rows="10" cols="40" id="id_message" required></textarea>
+                        </p>
+                        <p>
+                            <label for="id_group">Group:</label>
+                            <select class="browser-default" name="group" id="id_group">
+                                <option value="" selected>---------</option>
+                                <option value="2">Seond group</option>
+                                <option value="1">The first group on the site</option>
+                                <option value="3">third group</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label>Browser Select</label>
+                            <select class="browser-default">
+                                  <option value="" disabled selected>Choose your option</option>
+                                  <option value="1">Option 1</option>
+                                  <option value="2">Option 2</option>
+                                  <option value="3">Option 3</option>
+                                </select>
+                        </p>
+                        <input type="submit" value="Post" class="btn btn-primary">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/static/js/master.js"></script>
+
+</body>
+
+</html>
